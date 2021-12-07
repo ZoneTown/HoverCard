@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Cards</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        .container{
+            position:relative;
+            width:400px;
+            height:400px;
+            margin:50px;
+        }
+
+        .front-end{
+            position:absolute;
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+            transition: all 0.5s ease;
+        }
+
+        .front-end img{
+            width: 100%;
+            height: 100%;
+        }
+       
+        .back-container{
+            position:absolute;
+            text-align:center;
+            width:100%;
+            height:100%;
+            box-sizing:border-box;
+            top:0;
+            left:0; 
+            border: solid 5px black;
+            background: linear-gradient(to bottom right, red, yellow);
+            z-index:-2;
+        }
+
+        .back-end{
+           padding:0 60px;
+        }
+
+        .container .back-end{
+            transform:scale(0);
+            opacity:0;
+            transition:all 1s ease;
+        }
+
+        .container:hover .front-end {
+            width:100px;
+            height:100px;
+            left:350px;
+            top:150px;
+        }
+        
+        .container:hover .front-end img{
+            border-radius: 50px;
+        }
+
+        .container:hover .back-end{
+            transform: scale(1);
+            opacity:1;
+        }
+
+        .header{
+            margin-top:135px;
+            font-size:32px;
+            text-align:center;
+        }
+
+        .paragraph{
+            margin:20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="front-end">
+            <img src="24.jpg" alt="Stylish Girl"/>
+        </div>
+
+        <div class="back-container">
+            <div class="back-end">
+                <div class="header">Stylish Girl</div>
+                <div class="paragraph">Lorem Ipsum dolor amet, consectetur adipiscing elit. Vestibulum rutrum venenatis varius.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
